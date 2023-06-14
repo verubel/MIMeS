@@ -1,9 +1,12 @@
+# first specify which samples you want to process
+
 for i in `cat samples.txt`
 do
   echo ${i}
   SAMPLE=$(echo ${i})
   mkdir ${SAMPLE}
   cd ${SAMPLE}
+  # for each sample, a new dir is consructed contaning 3 dirs per domain
   mkdir bac
   cd bac
   module load bioconda/latest
