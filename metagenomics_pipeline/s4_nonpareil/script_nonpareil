@@ -19,3 +19,6 @@ do
   conda deactivate
   cd ..
 done
+
+# subsequently, constructed files are used for building nonpareil curve plots
+# script used can be found here: https://git.io-warnemuende.de/bio_inf/workflow_templates/src/branch/master/metaG_Illumina_PE/scripts/nonpareil_parse.R
