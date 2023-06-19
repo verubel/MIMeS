@@ -22,3 +22,10 @@ The goal of this ananlysis was to identify reads which belong to bacteria or euk
 Nonpareil analysis can be used to estimate the required sequencing depth of a metagenomic data set. 
 In our case, samples from 2019 and 2021 were used to estimate the diversity coverage to infer required sequencing depth for further experiments.
 
+# Step 5 - Kraken2
+
+Kraken2 was conducted to taxonomically assign the short reads to be able to split the data set into bacterial and eukaryotic reads. 
+
+# Step 6 - MEGAHIT
+
+Megahit was used to co-assable multiple (n=6) similar samples to achive a good metagenome coverage. 
