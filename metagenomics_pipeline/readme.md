@@ -24,7 +24,11 @@ In our case, samples from 2019 and 2021 were used to estimate the diversity cove
 
 # Step 5 - Kraken2
 
-Kraken2 was conducted to taxonomically assign the short reads to be able to split the data set into bacterial and eukaryotic reads. 
+Kraken2 was conducted to taxonomically assign the short reads to be able to split the data set into bacterial and eukaryotic reads.
+Kraken2 was conducted to get the Kraken2 output file and the Kraken2 report file. 
+The Kraken2 output file and the Kraken2 report file are then passed to a KrakenTools Application (extract_kraken_reads.py, Jennifer Lu) to extract specific reads. 
+The script was used tree times to extract bacteria, eukaryotes and archael reads. 
+Aferwards, the files must be reformatted to the correct .fasta format as the KrakenTools Application inserts non-compatible linebreaks. 
 
 # Step 6 - MEGAHIT
 
