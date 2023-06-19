@@ -20,6 +20,8 @@ done
 
 
 # 2. extract sequences
+# using KrakenTools extract_kraken_reads.py script available here:
+# https://github.com/jenniferlu717/KrakenTools/blob/master/extract_kraken_reads.py
 # in dir nonpareil_kraken do:
 
 for i in `cat samples.txt`
