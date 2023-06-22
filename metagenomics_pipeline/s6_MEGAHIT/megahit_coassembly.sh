@@ -3,7 +3,6 @@
 #SBATCH -t 168:00:00
 #SBATCH -e megahit.err
 #SBATCH -n 8
-#SBATCH --account=RPTU-MIMeS
 #SBATCH --mail-type=END
 #SBATCH --tasks=32
 #SBATCH --mem=900000
