@@ -32,8 +32,13 @@ Aferwards, the files must be reformatted to the correct .fasta format as the Kra
 
 # Step 6 - MEGAHIT
 
-MEGAHIT (https://github.com/voutcn/megahit) was used to co-assable multiple (n=6) similar samples to achive a good metagenome coverage. 
+MEGAHIT (https://github.com/voutcn/megahit) was used to co-assable multiple (n=6) similar samples to achive a good metagenome coverage.
+As an output, contigs are generated. 
 
 # Step 7 - phyloFlash 
 
 phyloFlash (http://hrgv.github.io/phyloFlash/) was used on the raw data to rapidly assemble reads and map them against the SILVA 138.1. database.
+
+# Step 8 - bowtie2
+
+bowtie2 (https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) is used for remapping of the MEGAHIT-generated (Step 6) contigs to the sequence reads (paired-end). As an outbut, alignment files in SAM/BAM format are generated. 
