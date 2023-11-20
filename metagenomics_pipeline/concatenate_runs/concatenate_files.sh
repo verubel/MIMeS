@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# here: files are concatinated to construct "artificially big sequence data" for nonpareil estimates
 # Path to the table file
 # table.txt contains 2 columns:
 # The fist column contains the seperate fastq.gz files downloaded from the sequencing facility
