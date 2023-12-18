@@ -4,3 +4,10 @@ rhrk-singularity phyloflash_3.4.2--hdfd78af_1.simg "phyloFlash.pl -lib output_na
  -read1 /dir/to/file_R1.fastq.gz \
  -read2 /dir/to/file_R2.fastq.gz \
  -almosteverything"
+
+ # also run bbmap/emirge/spades
+
+ rhrk-singularity phyloflash_3.4.2--hdfd78af_1.simg "phyloFlash.pl -lib output_name -everything \
+ -dbhome /dir/to/db/138.1 \
+ -read1 /dir/to/file_R1.fastq.gz \
+ -read2 /dir/to/file_R2.fastq.gz"
