@@ -1,8 +1,20 @@
-# paired end mode
-module load bioconda/latest
-for i in `cat /work/RPTU-MIMeS/pipeline_pilot_DNA/first_steps/samples.txt`
-do
-  echo ${i}
-  SAMPLE=$(echo ${i})
-  sbatch -N 1 --account=RPTU-MIMeS --tasks=32 --mem=900000 --time=48:00:00 --mail-type=END --wrap "spades.py --meta -1 /work/RPTU-MIMeS/pipeline_pilot_DNA/first_steps/step3_sortmerna/${SAMPLE}/out/smr_na_${SAMPLE}_R1.fastq.gz -2 /work/RPTU-MIMeS/pipeline_pilot_DNA/first_steps/step3_sortmerna/${SAMPLE}/out/smr_na_${SAMPLE}_R2.fastq.gz -t 32 -m 900 --phred-offset 33 -o /work/RPTU-MIMeS/pipeline_pilot_DNA/first_steps/step4a_metaspades/${SAMPLE}"
+#!/bin/sh
+#SBATCH -N 1
+#SBATCH --account=RPTU-MIMeS
+#SBATCH --tasks=32
+#SBATCH --mem=900000
+#SBATCH --time=48:00:00
+
+SAMPLE_LIST="/work/RPTU-MIMeS/concat_rawfiles_SO295/samples.txt"
+
+# Loop through each sample in the list
+for SAMPLE in $(cat "$SAMPLE_LIST"); do
+  # Load the required modules
+  module load bioconda/latest
+  # Submit the sbatch job for each sample
+  # metaspades
+  spades.py --meta -1 /work/RPTU-MIMeS/DNA_processing/clumpify/${SAMPLE}/${SAMPLE}_dedup_R1.fastq.gz \
+  -2 /work/RPTU-MIMeS/DNA_processing/clumpify/${SAMPLE}/${SAMPLE}_dedup_R2.fastq.gz \
+  -t 32 -m 900 --phred-offset 33 -o /work/RPTU-MIMeS/DNA_processing/metaspades/${SAMPLE}"
 done
+
